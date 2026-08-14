@@ -51,7 +51,7 @@ pip install -r requirements.txt
 ### 4. Compile the Frontend TypeScript
 The frontend uses strict TypeScript that needs to be compiled to ES6 JavaScript before running.
 ```bash
-npx typescript tsc static/main.ts --strict --target ES2022 --module ES6
+npx -p typescript tsc static/main.ts --strict --target ES2022 --module ES6
 ```
 
 ### 5. Configure Environment Variables
