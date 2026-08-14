@@ -27,12 +27,21 @@ cd stock-news-summary
 ### 2. Set up the Python Virtual Environment
 ```bash
 python -m venv env
-
-# On Windows:
-.\env\Scripts\activate
-# On macOS/Linux:
-source env/bin/activate
 ```
+
+Activate the virtual environment:
+
+- Windows:
+
+    ```bash
+    source env/Scripts/activate
+    ```
+
+- Linux/Mac:
+
+    ```bash
+    source env/bin/activate
+    ```
 
 ### 3. Install Python Dependencies
 ```bash
