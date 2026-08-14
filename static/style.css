@@ -1,0 +1,51 @@
+:root { 
+    color-scheme: light dark; 
+    font-family: Inter, system-ui, sans-serif; 
+}
+body { 
+    max-width: 920px; 
+    margin: 0 auto; 
+    padding: 48px 20px 80px; 
+}
+h1 { 
+    margin-bottom: 8px; 
+}
+.muted { 
+    opacity: .72; 
+}
+form { 
+    display: flex; 
+    gap: 10px; 
+    margin: 28px 0; 
+}
+input, button { 
+    font: inherit; 
+    padding: 12px 14px; 
+    border-radius: 8px; 
+    border: 1px solid #8886; 
+}
+input { 
+    flex: 1; 
+    text-transform: uppercase; 
+}
+button { 
+    cursor: pointer; 
+    font-weight: 650; 
+}
+section { 
+    margin-top: 26px; 
+}
+li { 
+    margin: 8px 0; 
+}
+.card { 
+    border: 1px solid #8884; 
+    border-radius: 12px; 
+    padding: 20px; 
+    margin-top: 18px; 
+}
+.hidden { 
+    display: none; 
+}
+.error { color: #c44; }
+a { word-break: break-word; }

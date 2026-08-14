@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock News Summary</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Stock News Summary</h1>
+    <p class="muted">
+      Enter a ticker to generate a concise AI briefing from its latest news.
+    </p>
+
+    <form id="summary-form">
+      <input
+        id="ticker"
+        value="NVDA"
+        maxlength="15"
+        aria-label="Stock ticker"
+      />
+      <button type="submit">Generate summary</button>
+    </form>
+
+    <p id="status" class="muted"></p>
+    <p id="error" class="error hidden"></p>
+
+    <main id="result" class="hidden">
+      <div class="card">
+        <h2 id="heading"></h2>
+        <p id="freshness" class="muted"></p>
+        <p id="overview"></p>
+      </div>
+
+      <section>
+        <h3>Key developments</h3>
+        <ul id="developments"></ul>
+      </section>
+
+      <section>
+        <h3>News sentiment</h3>
+        <p id="sentiment"></p>
+      </section>
+
+      <section>
+        <h3>What to watch</h3>
+        <ul id="watch"></ul>
+      </section>
+
+      <section>
+        <h3>Sources</h3>
+        <ul id="sources"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="/static/main.js"></script>
+  </body>
+</html>
