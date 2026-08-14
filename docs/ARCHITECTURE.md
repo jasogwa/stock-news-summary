@@ -89,7 +89,7 @@ The application should return clear error responses instead of exposing internal
 ### NFR-1: Maintainability
 The design should clearly separate:
 
-HTTP/API concerns -|- Business logic -|- External integrations
+**HTTP/API concerns** -|- **Business logic** -|- **External integrations**
 
 This should make the application easier to understand and modify.
 
@@ -159,7 +159,7 @@ The prototype does not need to store users, articles, or generated summaries.
 
 The application can follow:
 ``
-request-->fetch-->summarize-->return
+**request**-->**fetch**-->**summarize**-->**return**
 ``
 ### Assumption 6: Real-Time Market Prices Are Outside Scope
 The system focuses on recent financial news rather than live market-price streaming or trading execution.
@@ -237,8 +237,11 @@ Mock the **NewsProvider** and **Summarizer** and verify that the orchestration s
 Verify HTTP behaviour such as:
 
 successful summary -> 200
+
 invalid input      -> 400
+
 no news            -> 404
+
 provider failure   -> 502
 
 External APIs should be mocked so tests remain deterministic and do not require credentials.
