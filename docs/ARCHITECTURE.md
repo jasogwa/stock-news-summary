@@ -159,7 +159,7 @@ The prototype does not need to store users, articles, or generated summaries.
 
 The application can follow:
 ``
-**request**-->**fetch**-->**summarize**-->**return**
+``request``-->``fetch``-->``summarize``-->``return``
 ``
 ### Assumption 6: Real-Time Market Prices Are Outside Scope
 The system focuses on recent financial news rather than live market-price streaming or trading execution.
