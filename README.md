@@ -105,6 +105,13 @@ pytest
 
 ---
 
+## Design Decisions
+
+- **Decoupled Architecture**: The system cleanly separates the HTTP API layer (`routers`), business orchestration (`services/stock_summary`), and external integrations (`news` and `summarizer`). This ensures that external dependencies (like the news source or AI model) can be swapped out with minimal impact.
+- **Protocol-based Abstractions**: The `NewsProvider` and `Summarizer` interfaces use Python `Protocol`s. This makes it trivial to mock these dependencies for deterministic testing without needing live network access or real API keys.
+- **Direct LLM Context vs RAG**: Given the scope is to summarize 5-10 recent articles for a single stock, the articles are injected directly into the prompt context rather than building a complex Vector DB / RAG setup. This keeps the application simple and fast while still fulfilling the requirements.
+- **Pydantic Structured Output**: We use OpenAI's JSON schema output feature mapping directly to a Pydantic model (`StockSummary`) to ensure the AI always returns a rigorously typed and expected JSON format.
+
 ## Architecture & Documentation
 
-For a deep dive into the System Requirements Specification (SRS), decoupled architecture, exception handling, and execution flow, please read the [Architecture Documentation](docs/ARCHITECTURE.md).
+For a deep dive into the System Requirements Specification (SRS), exception handling, and full execution flow diagrams, please read the comprehensive [Architecture Documentation](docs/ARCHITECTURE.md).
