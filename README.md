@@ -105,6 +105,15 @@ pytest
 
 ---
 
+## Summary of Tools & Techniques Used
+
+- **Backend:** Python 3.10+ with **FastAPI** for a fast, modern, and asynchronous HTTP API.
+- **Frontend:** HTML, CSS, and strict **TypeScript** (compiled to ES6) for a clean, single-page UI.
+- **Data Validation:** **Pydantic** was used both for validating incoming API requests and mapping OpenAI's structured JSON outputs securely to internal data models.
+- **Design Pattern (Dependency Inversion):** Used Python `Protocols` to create abstraction layers for the `NewsProvider` and `Summarizer`. This technique decouples the business logic from external dependencies (yfinance/OpenAI), keeping the app highly extensible and easily testable.
+- **Testing:** **pytest** combined with mocked services to ensure deterministic tests that don't rely on live network access or real API keys.
+- **Containerization:** **Docker** for isolated and consistent deployment environments.
+
 ## Design Decisions
 
 - **Decoupled Architecture**: The system cleanly separates the HTTP API layer (`routers`), business orchestration (`services/stock_summary`), and external integrations (`news` and `summarizer`). This ensures that external dependencies (like the news source or AI model) can be swapped out with minimal impact.
